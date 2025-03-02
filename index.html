@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./src/assets/icons/hbo.png" type="image/x-icon">
+
     <link rel="stylesheet" href="./src/styles/index.css">
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/global.css">
@@ -11,14 +22,33 @@
 </head>
 <body>
     <header>
-        <img src="./src/assets/icons/hbo-logo.svg" alt="Hbo Logo">
+        <img src="./src/assets/icons/hbo-logo.svg" width="160px" height="26px" alt="Hbo Logo">
         <div class="login">
             <a href="./src/pages/singin.html">ENTRAR</a>
-            <button type="button">ASSINE AGORA</button>
+            <a href="#planos" class="button">ASSINE AGORA</a>
         </div>
     </header>
     <main>
-        
+        <div class="content">
+            <div class="img-icons">
+                <img src="./src/assets/icons/hbo.png" alt="Hbo">
+                <img src="./src/assets/icons/dc.png" alt="DC">
+                <img src="./src/assets/icons/wb.png" alt="Warner Bros.">
+                <img src="./src/assets/icons/cartoon-network_neutral.png" alt="Cartoon Network Neutral">
+                <img src="./src/assets/icons/max_originals.png" alt="Max Originals">
+            </div>
+            <div class="title">
+                <span>CURTAS AS MELHORES HISTÓRIAS</span>
+                <h1>PARA TODO MUNDO</h1>
+            </div>
+            <div class="divider"></div>
+            <div class="text">
+                <p>Assinaturas a partir a partir de</p>
+                <p class="offer-price">R$14,15 <span>/mês</span></p>
+            </div>
+            <a href="#planos" class="button subs">ASSINE AGORA</a>
+            <p>*aplicável ao plano anual com o pagamento antecipado.</p>
+        </div>
     </main>
 </body>
 </html>
