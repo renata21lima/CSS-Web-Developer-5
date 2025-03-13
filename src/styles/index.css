@@ -47,10 +47,35 @@ a[href="#planos"]{
 main{
     padding-top: 100px;
     padding-bottom: 100px;
+    position: relative;
     color: var(--text-color);
     width: 100%;
     margin-top: 50px;
+    background: linear-gradient(-45deg, rgb(86, 18, 91), rgb(15, 15, 16), rgb(39, 30, 110)) 0% 0% / 400% 400%;
+    animation: 10s ease 0s infinite alternate none running gradient;
 }
+
+main::after {
+    content: "";
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, var(--main-color), transparent);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .content{
     display: flex;
@@ -118,7 +143,11 @@ main > .content > p{
     text-align: center;
     font-size: 16px;
     font-family: "Quicksand";
+    color: white;
 }
+
+
+
 
 @media screen and (max-width: 480px) {
     header{
