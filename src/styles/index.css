@@ -76,6 +76,38 @@ main::after {
     }
 }
 
+.cards-subs{
+    margin-right: 33px;
+    margin-left: 33px;
+}
+
+.cards-subs > h2{
+    color: white;
+    text-align: center;
+    font-size: 32px;
+}
+
+.card-content{
+    background: var(--card-bg-color);
+    padding: 40px 60px;
+    border-radius: 8px;
+    max-width: 1200px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
 
 .content{
     display: flex;
@@ -146,6 +178,9 @@ main > .content > p{
     color: white;
 }
 
+.title-card{
+    color: white;
+}
 
 
 
