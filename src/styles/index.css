@@ -1,20 +1,23 @@
+@import url(./global.css);
+
 body{
     background-color: var(--main-color);
     font-family: "Raleway";
 }
 
+/* Header */
 header{
     background-color: var(--header-bg-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 
     width: 100%;
     height: 3.4rem;
     padding: 12px 16px;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-
+    
     top: 0;
     position: fixed;
     z-index: 1;
@@ -36,14 +39,21 @@ a[href="#planos"]{
 }
 
 a[href="#planos"]{
-    background-color: var(--secundary-color);
+    background-color: var(--tertiary-color);
     padding: 8px 26px;
+}
+
+a[href="#planos"]:hover{
+    background-color: white;
+    color: var(--main-color);
+    transition: background 1s, color 1s;
 }
 
 .button{
     border-radius: 50px;
 }
 
+/* Main */
 main{
     padding-top: 100px;
     padding-bottom: 100px;
@@ -51,6 +61,7 @@ main{
     color: var(--text-color);
     width: 100%;
     margin-top: 50px;
+    margin-bottom: 250px;
     background: linear-gradient(-45deg, rgb(86, 18, 91), rgb(15, 15, 16), rgb(39, 30, 110)) 0% 0% / 400% 400%;
     animation: 10s ease 0s infinite alternate none running gradient;
 }
@@ -58,7 +69,7 @@ main{
 main::after {
     content: "";
     width: 100%;
-    height: 250px;
+    height: 210px;
     position: absolute;
     bottom: 0;
     background: linear-gradient(0deg, var(--main-color), transparent);
@@ -76,37 +87,11 @@ main::after {
     }
 }
 
-.cards-subs{
-    margin-right: 33px;
-    margin-left: 33px;
-}
-
-.cards-subs > h2{
-    color: white;
-    text-align: center;
-    font-size: 32px;
-}
-
-.card-content{
-    background: var(--card-bg-color);
-    padding: 40px 60px;
-    border-radius: 8px;
-    max-width: 1200px;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.img-icons{
     align-items: center;
-
-}
-
-.card{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 80px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .content{
@@ -116,14 +101,6 @@ main::after {
     flex-direction: column;
     gap: 40px;
     padding: 0 42px;
-}
-
-.img-icons{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    align-items: center;
-    justify-content: center;
 }
 
 .title{
@@ -166,8 +143,42 @@ main::after {
     font-weight: 300;
 }
 
-.button.subs {
+.button-subs {
     background: var(--btn-bg-color-gradient);
+    padding: 16px 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    animation: button-move 2.2s linear 0s infinite normal none running;
+}
+
+@keyframes button-move {
+    0%, 10%{
+        transform: rotate(0deg);
+    }
+
+    15%{
+        transform: rotate(-15deg);
+    }
+
+    20%{
+        transform: rotate(10deg);
+    }
+
+    25%{
+        transform: rotate(-10deg);
+    }
+
+    30%{
+        transform: rotate(10deg);
+    }
+
+    35%{
+        transform: rotate(-10deg);
+    }
+
+    40%, 100%{
+        transform: rotate(0deg);
+    }
 }
 
 main > .content > p{
@@ -178,13 +189,84 @@ main > .content > p{
     color: white;
 }
 
-.title-card{
-    color: white;
+/* Cards */
+.cards-subs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
 }
 
+.cards-subs > h2{
+    color: #ffff;
+    font-size: 32px;
+    font-weight: 500;
+}
 
+.card{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+.card-content{
+    background: var(--card-bg-color);
+    padding: 40px 60px;
+    border-radius: 8px;
+    max-width: 1200px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.title-card{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.title-card > h3{
+    color: #ffff;
+    font-size: 23.4px;
+    font-weight: bold;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price > p{
+    font-size: 32px;
+    color: var(--secundary-color);
+}
+
+.price > span{
+    font-size: 16px;
+    color: white;
+    align-self: self-end;
+}
+
+.icon-text{
+    color: #ffff;
+}
+
+.icon-text > li{
+    padding-left: 14px;
+    margin-bottom: 14px;
+    font-size: 20px;
+}
 
 @media screen and (max-width: 480px) {
+    /* Header */
     header{
         flex-direction: column;
         align-items:center;
@@ -200,8 +282,10 @@ main > .content > p{
 
     main{
         margin-top: 128px;
+        align-items: center;
     }
 }
+
 
 @media screen and (max-width: 800px) {
 
