@@ -196,13 +196,16 @@ main > .content > p{
     justify-content: center;
     align-items: center;
     width: 100%;
-
+    padding: 24px;
+    background: url(../assets/img/background-movies-series.png) no-repeat;
+    background-size: cover;
 }
 
 .cards-subs > h2{
     color: #ffff;
     font-size: 32px;
     font-weight: 500;
+    text-align: center;
 }
 
 .card{
@@ -212,6 +215,7 @@ main > .content > p{
     gap: 40px;
     align-items: center;
     width: 100%;
+    perspective: 2000px;
 }
 
 .card-content{
@@ -223,7 +227,18 @@ main > .content > p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 1s ease-in-out;
 
+}
+
+.card:has(.card-content:nth-child(1):hover)
+.card-content:nth-child(2) {
+    transform: rotateY(-45deg);
+}
+
+.card:has(.card-content:nth-child(2):hover)
+.card-content:nth-child(1) {
+    transform: rotateY(45deg);
 }
 
 .title-card{
@@ -262,8 +277,105 @@ main > .content > p{
 .icon-text > li{
     padding-left: 14px;
     margin-bottom: 14px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
+
+li::marker{
+    content: "+";
+    font-size: 2rem;
+    margin: 0 8px 0 0;
+}
+
+
+.button{
+    background: var(--btn-bg-color-gradient);
+    background-size: 250%;
+    outline: 3px solid transparent;
+    transition: background 1s, outline 1s, transform 1s;
+    padding: 14px 40px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 4px;
+    border: none;
+}
+
+.button:hover {
+    background-color: transparent;
+    background-position: 100%;
+    outline: 2px solid var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Cards */
+.contents-hbo {
+    margin: 100px auto;
+    padding: 24px;
+}
+
+.contents-hbo > h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.contents-cards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.cards-contents {
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    transition: transform 0.8s, background 0.8s, border 1s;
+    overflow: hidden;
+}
+
+.cards-contents:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--tertiary-color);
+}
+
+.cards-contents:hover img {
+    opacity: 0;
+}
+
+.cards-contents > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 2s;
+}
+
+.cards-contents:nth-child(1):hover {
+    background-image: url("../assets/img/hbo-hover_0.webp");
+}
+
+.cards-contents:nth-child(2):hover {
+    background-image: url("../assets/img/MAX-Hover.webp");
+}
+
+.cards-contents:nth-child(3):hover {
+    background-image: url("../assets/img/DC-Hover.webp");
+}
+
+.cards-contents:nth-child(4):hover {
+    background-image: url("../assets/img/WB-Hover.webp");
+}
+
+.cards-contents:nth-child(5):hover {
+    background-image: url("../assets/img/CN-Hover.png");
+}
+
+.cards-contents:nth-child(6):hover {
+    background-image: url("../assets/img/UCL-Hover.webp");
+}
+
 
 @media screen and (max-width: 480px) {
     /* Header */
@@ -284,6 +396,49 @@ main > .content > p{
         margin-top: 128px;
         align-items: center;
     }
+
+    .contents-hbo > h2{
+        text-align: center;
+    }
+
+    .contents-cards {
+        grid-template-columns: repeat(6, 100%);
+        grid-auto-flow: column;
+        overflow: auto hidden;
+    }
+}
+
+.footer {
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    color: var(--link-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 14px;
+    letter-spacing: 2px;
+    transition: color 0.5s;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.footer:hover {
+    color: var(--text-color);
+}
+
+.footer-legal {
+    font-size: 0.75rem;
+    margin: 16px 0;
+    color: #ffff;
+    margin: 0 14px;
+}
+
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 80px;
 }
 
 
@@ -292,6 +447,10 @@ main > .content > p{
 }
 
 @media screen and (max-width: 1140px) {
+    .card{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width: 1200px) {
